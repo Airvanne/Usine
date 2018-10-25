@@ -125,3 +125,721 @@ Migrating to CreateAssembliesAndParts (20181025150513)
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
   [1m[36mPart Load (1.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (11.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (190.7ms)[0m  [1m[35mCREATE TABLE "assemblies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies_parts"[0m
+  ↳ db/schema.rb:21
+  [1m[35m (155.9ms)[0m  [1m[35mCREATE TABLE "assemblies_parts" ("assembly_id" integer, "part_id" integer)[0m
+  ↳ db/schema.rb:21
+  [1m[35m (131.4ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_assembly_id" ON "assemblies_parts" ("assembly_id")[0m
+  ↳ db/schema.rb:21
+  [1m[35m (168.1ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_part_id" ON "assemblies_parts" ("part_id")[0m
+  ↳ db/schema.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "parts"[0m
+  ↳ db/schema.rb:28
+  [1m[35m (139.6ms)[0m  [1m[35mCREATE TABLE "parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "part_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (164.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (126.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181025150513)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (156.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181025150456),
+(20181025150449);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (214.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (11.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-25 17:40:48.978078"], ["updated_at", "2018-10-25 17:40:48.978078"]]
+  ↳ db/schema.rb:13
+  [1m[35m (501.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (191.0ms)[0m  [1m[35mCREATE TABLE "assemblies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies_parts"[0m
+  ↳ db/schema.rb:21
+  [1m[35m (151.8ms)[0m  [1m[35mCREATE TABLE "assemblies_parts" ("assembly_id" integer, "part_id" integer)[0m
+  ↳ db/schema.rb:21
+  [1m[35m (147.0ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_assembly_id" ON "assemblies_parts" ("assembly_id")[0m
+  ↳ db/schema.rb:21
+  [1m[35m (168.3ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_part_id" ON "assemblies_parts" ("part_id")[0m
+  ↳ db/schema.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "parts"[0m
+  ↳ db/schema.rb:28
+  [1m[35m (157.1ms)[0m  [1m[35mCREATE TABLE "parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "part_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (132.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (122.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181025150513)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (116.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181025150456),
+(20181025150449);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (180.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-25 17:40:50.992145"], ["updated_at", "2018-10-25 17:40:50.992145"]]
+  ↳ db/schema.rb:13
+  [1m[35m (130.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-10-25 17:40:51.140722"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (126.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (261.8ms)[0m  [1m[35mCREATE TABLE "assemblies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies_parts"[0m
+  ↳ db/schema.rb:21
+  [1m[35m (150.0ms)[0m  [1m[35mCREATE TABLE "assemblies_parts" ("assembly_id" integer, "part_id" integer)[0m
+  ↳ db/schema.rb:21
+  [1m[35m (161.9ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_assembly_id" ON "assemblies_parts" ("assembly_id")[0m
+  ↳ db/schema.rb:21
+  [1m[35m (174.2ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_part_id" ON "assemblies_parts" ("part_id")[0m
+  ↳ db/schema.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "parts"[0m
+  ↳ db/schema.rb:28
+  [1m[35m (130.4ms)[0m  [1m[35mCREATE TABLE "parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "part_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (138.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (118.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181025150513)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (105.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181025150456),
+(20181025150449);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (122.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (9.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-25 17:41:30.774851"], ["updated_at", "2018-10-25 17:41:30.774851"]]
+  ↳ db/schema.rb:13
+  [1m[35m (155.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (119.4ms)[0m  [1m[35mCREATE TABLE "assemblies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies_parts"[0m
+  ↳ db/schema.rb:21
+  [1m[35m (139.9ms)[0m  [1m[35mCREATE TABLE "assemblies_parts" ("assembly_id" integer, "part_id" integer)[0m
+  ↳ db/schema.rb:21
+  [1m[35m (141.5ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_assembly_id" ON "assemblies_parts" ("assembly_id")[0m
+  ↳ db/schema.rb:21
+  [1m[35m (588.3ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_part_id" ON "assemblies_parts" ("part_id")[0m
+  ↳ db/schema.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "parts"[0m
+  ↳ db/schema.rb:28
+  [1m[35m (179.6ms)[0m  [1m[35mCREATE TABLE "parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "part_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (140.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (142.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181025150513)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (104.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181025150456),
+(20181025150449);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (145.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (3.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-25 17:41:32.725418"], ["updated_at", "2018-10-25 17:41:32.725418"]]
+  ↳ db/schema.rb:13
+  [1m[35m (105.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (2.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-10-25 17:41:32.843347"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (93.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeTables (20181025174343)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "assemblies" ADD "parts_id" integer[0m
+  ↳ db/migrate/20181025174343_change_tables.rb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181025174343_change_tables.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_on_parts_id" ON "assemblies" ("parts_id")[0m
+  ↳ db/migrate/20181025174343_change_tables.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "parts" ADD "assemblies_id" integer[0m
+  ↳ db/migrate/20181025174343_change_tables.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_parts_on_assemblies_id" ON "parts" ("assemblies_id")[0m
+  ↳ db/migrate/20181025174343_change_tables.rb:8
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181025174343"]]
+  ↳ bin/rails:9
+  [1m[35m (192.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (143.1ms)[0m  [1m[35mCREATE TABLE "assemblies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "parts_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (163.5ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_on_parts_id" ON "assemblies" ("parts_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies_parts"[0m
+  ↳ db/schema.rb:23
+  [1m[35m (143.7ms)[0m  [1m[35mCREATE TABLE "assemblies_parts" ("assembly_id" integer, "part_id" integer)[0m
+  ↳ db/schema.rb:23
+  [1m[35m (158.4ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_assembly_id" ON "assemblies_parts" ("assembly_id")[0m
+  ↳ db/schema.rb:23
+  [1m[35m (146.2ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_part_id" ON "assemblies_parts" ("part_id")[0m
+  ↳ db/schema.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "parts"[0m
+  ↳ db/schema.rb:30
+  [1m[35m (151.1ms)[0m  [1m[35mCREATE TABLE "parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "part_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "assemblies_id" integer)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (150.5ms)[0m  [1m[35mCREATE  INDEX "index_parts_on_assemblies_id" ON "parts" ("assemblies_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (136.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (118.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181025174343)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (98.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181025150513),
+(20181025150456),
+(20181025150449);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (148.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (11.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-25 17:45:40.897615"], ["updated_at", "2018-10-25 17:45:40.897615"]]
+  ↳ db/schema.rb:13
+  [1m[35m (372.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (137.9ms)[0m  [1m[35mCREATE TABLE "assemblies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "parts_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (153.1ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_on_parts_id" ON "assemblies" ("parts_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies_parts"[0m
+  ↳ db/schema.rb:23
+  [1m[35m (144.7ms)[0m  [1m[35mCREATE TABLE "assemblies_parts" ("assembly_id" integer, "part_id" integer)[0m
+  ↳ db/schema.rb:23
+  [1m[35m (149.8ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_assembly_id" ON "assemblies_parts" ("assembly_id")[0m
+  ↳ db/schema.rb:23
+  [1m[35m (142.5ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_part_id" ON "assemblies_parts" ("part_id")[0m
+  ↳ db/schema.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "parts"[0m
+  ↳ db/schema.rb:30
+  [1m[35m (128.8ms)[0m  [1m[35mCREATE TABLE "parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "part_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "assemblies_id" integer)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (143.6ms)[0m  [1m[35mCREATE  INDEX "index_parts_on_assemblies_id" ON "parts" ("assemblies_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (135.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (121.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181025174343)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (112.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181025150513),
+(20181025150456),
+(20181025150449);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (143.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (2.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-25 17:45:42.892481"], ["updated_at", "2018-10-25 17:45:42.892481"]]
+  ↳ db/schema.rb:13
+  [1m[35m (125.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (3.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-10-25 17:45:43.034743"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (86.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (207.4ms)[0m  [1m[35mCREATE TABLE "assemblies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "parts_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (161.8ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_on_parts_id" ON "assemblies" ("parts_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies_parts"[0m
+  ↳ db/schema.rb:23
+  [1m[35m (143.0ms)[0m  [1m[35mCREATE TABLE "assemblies_parts" ("assembly_id" integer, "part_id" integer)[0m
+  ↳ db/schema.rb:23
+  [1m[35m (137.3ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_assembly_id" ON "assemblies_parts" ("assembly_id")[0m
+  ↳ db/schema.rb:23
+  [1m[35m (184.0ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_part_id" ON "assemblies_parts" ("part_id")[0m
+  ↳ db/schema.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "parts"[0m
+  ↳ db/schema.rb:30
+  [1m[35m (214.8ms)[0m  [1m[35mCREATE TABLE "parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "part_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "assemblies_id" integer)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (180.1ms)[0m  [1m[35mCREATE  INDEX "index_parts_on_assemblies_id" ON "parts" ("assemblies_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (165.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (140.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181025174343)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (117.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181025150513),
+(20181025150456),
+(20181025150449);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (134.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (7.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (6.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-25 17:46:07.456482"], ["updated_at", "2018-10-25 17:46:07.456482"]]
+  ↳ db/schema.rb:13
+  [1m[35m (121.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (118.5ms)[0m  [1m[35mCREATE TABLE "assemblies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "parts_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (136.6ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_on_parts_id" ON "assemblies" ("parts_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies_parts"[0m
+  ↳ db/schema.rb:23
+  [1m[35m (150.1ms)[0m  [1m[35mCREATE TABLE "assemblies_parts" ("assembly_id" integer, "part_id" integer)[0m
+  ↳ db/schema.rb:23
+  [1m[35m (140.7ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_assembly_id" ON "assemblies_parts" ("assembly_id")[0m
+  ↳ db/schema.rb:23
+  [1m[35m (319.3ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_part_id" ON "assemblies_parts" ("part_id")[0m
+  ↳ db/schema.rb:23
+  [1m[35m (7.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "parts"[0m
+  ↳ db/schema.rb:30
+  [1m[35m (140.8ms)[0m  [1m[35mCREATE TABLE "parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "part_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "assemblies_id" integer)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (168.8ms)[0m  [1m[35mCREATE  INDEX "index_parts_on_assemblies_id" ON "parts" ("assemblies_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (138.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (122.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181025174343)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (116.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181025150513),
+(20181025150456),
+(20181025150449);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (148.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (15.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-25 17:46:09.442158"], ["updated_at", "2018-10-25 17:46:09.442158"]]
+  ↳ db/schema.rb:13
+  [1m[35m (106.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-10-25 17:46:09.576203"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (135.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (168.5ms)[0m  [1m[35mCREATE TABLE "assemblies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "parts_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (142.4ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_on_parts_id" ON "assemblies" ("parts_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies_parts"[0m
+  ↳ db/schema.rb:23
+  [1m[35m (169.9ms)[0m  [1m[35mCREATE TABLE "assemblies_parts" ("assembly_id" integer, "part_id" integer)[0m
+  ↳ db/schema.rb:23
+  [1m[35m (151.9ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_assembly_id" ON "assemblies_parts" ("assembly_id")[0m
+  ↳ db/schema.rb:23
+  [1m[35m (127.1ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_part_id" ON "assemblies_parts" ("part_id")[0m
+  ↳ db/schema.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "parts"[0m
+  ↳ db/schema.rb:30
+  [1m[35m (144.5ms)[0m  [1m[35mCREATE TABLE "parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "part_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "assemblies_id" integer)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (148.6ms)[0m  [1m[35mCREATE  INDEX "index_parts_on_assemblies_id" ON "parts" ("assemblies_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (145.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (132.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181025174343)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (121.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181025150513),
+(20181025150456),
+(20181025150449);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (199.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (7.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-25 17:46:52.993006"], ["updated_at", "2018-10-25 17:46:52.993006"]]
+  ↳ db/schema.rb:13
+  [1m[35m (159.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (155.5ms)[0m  [1m[35mCREATE TABLE "assemblies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "parts_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (170.4ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_on_parts_id" ON "assemblies" ("parts_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "assemblies_parts"[0m
+  ↳ db/schema.rb:23
+  [1m[35m (147.1ms)[0m  [1m[35mCREATE TABLE "assemblies_parts" ("assembly_id" integer, "part_id" integer)[0m
+  ↳ db/schema.rb:23
+  [1m[35m (108.4ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_assembly_id" ON "assemblies_parts" ("assembly_id")[0m
+  ↳ db/schema.rb:23
+  [1m[35m (110.9ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_part_id" ON "assemblies_parts" ("part_id")[0m
+  ↳ db/schema.rb:23
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "parts"[0m
+  ↳ db/schema.rb:30
+  [1m[35m (108.7ms)[0m  [1m[35mCREATE TABLE "parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "part_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "assemblies_id" integer)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (142.6ms)[0m  [1m[35mCREATE  INDEX "index_parts_on_assemblies_id" ON "parts" ("assemblies_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (145.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (118.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181025174343)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (85.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181025150513),
+(20181025150456),
+(20181025150449);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (145.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-25 17:46:54.649508"], ["updated_at", "2018-10-25 17:46:54.649508"]]
+  ↳ db/schema.rb:13
+  [1m[35m (624.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (11.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-10-25 17:46:55.288196"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (102.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mAssembly Create (3.1ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at", "parts_id") VALUES (?, ?, ?, ?)[0m  [["name", "Westmalle Trappist Tripel"], ["created_at", "2018-10-25 17:46:55.839241"], ["updated_at", "2018-10-25 17:46:55.839241"], ["parts_id", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (173.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPart Create (11.2ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at", "assemblies_id") VALUES (?, ?, ?, ?)[0m  [["part_number", "Oscar Ward"], ["created_at", "2018-10-25 17:46:56.076805"], ["updated_at", "2018-10-25 17:46:56.076805"], ["assemblies_id", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (212.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mAssembly Create (1.7ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at", "parts_id") VALUES (?, ?, ?, ?)[0m  [["name", "90 Minute IPA"], ["created_at", "2018-10-25 17:46:56.304957"], ["updated_at", "2018-10-25 17:46:56.304957"], ["parts_id", 2]]
+  ↳ db/seeds.rb:10
+  [1m[35m (194.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPart Create (0.8ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at", "assemblies_id") VALUES (?, ?, ?, ?)[0m  [["part_number", "Mr. Don Hayes"], ["created_at", "2018-10-25 17:46:56.508676"], ["updated_at", "2018-10-25 17:46:56.508676"], ["assemblies_id", 2]]
+  ↳ db/seeds.rb:11
+  [1m[35m (143.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mAssembly Create (3.2ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at", "parts_id") VALUES (?, ?, ?, ?)[0m  [["name", "Founders Kentucky Breakfast"], ["created_at", "2018-10-25 17:46:56.661388"], ["updated_at", "2018-10-25 17:46:56.661388"], ["parts_id", 3]]
+  ↳ db/seeds.rb:10
+  [1m[35m (165.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPart Create (2.1ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at", "assemblies_id") VALUES (?, ?, ?, ?)[0m  [["part_number", "Leland Reynolds"], ["created_at", "2018-10-25 17:46:56.837089"], ["updated_at", "2018-10-25 17:46:56.837089"], ["assemblies_id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (181.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mAssembly Create (3.3ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at", "parts_id") VALUES (?, ?, ?, ?)[0m  [["name", "Storm King Stout"], ["created_at", "2018-10-25 17:46:57.026598"], ["updated_at", "2018-10-25 17:46:57.026598"], ["parts_id", 4]]
+  ↳ db/seeds.rb:10
+  [1m[35m (203.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPart Create (4.3ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at", "assemblies_id") VALUES (?, ?, ?, ?)[0m  [["part_number", "Darnell Cummings II"], ["created_at", "2018-10-25 17:46:57.241678"], ["updated_at", "2018-10-25 17:46:57.241678"], ["assemblies_id", 4]]
+  ↳ db/seeds.rb:11
+  [1m[35m (202.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mAssembly Create (3.1ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at", "parts_id") VALUES (?, ?, ?, ?)[0m  [["name", "Bourbon County Stout"], ["created_at", "2018-10-25 17:46:57.455706"], ["updated_at", "2018-10-25 17:46:57.455706"], ["parts_id", 5]]
+  ↳ db/seeds.rb:10
+  [1m[35m (173.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPart Create (1.9ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at", "assemblies_id") VALUES (?, ?, ?, ?)[0m  [["part_number", "Jayna Kulas"], ["created_at", "2018-10-25 17:46:57.646023"], ["updated_at", "2018-10-25 17:46:57.646023"], ["assemblies_id", 5]]
+  ↳ db/seeds.rb:11
+  [1m[35m (248.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mAssembly Create (10.0ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at", "parts_id") VALUES (?, ?, ?, ?)[0m  [["name", "Storm King Stout"], ["created_at", "2018-10-25 17:46:57.902732"], ["updated_at", "2018-10-25 17:46:57.902732"], ["parts_id", 6]]
+  ↳ db/seeds.rb:10
+  [1m[35m (108.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPart Create (7.2ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at", "assemblies_id") VALUES (?, ?, ?, ?)[0m  [["part_number", "Lieselotte Stanton"], ["created_at", "2018-10-25 17:46:58.039746"], ["updated_at", "2018-10-25 17:46:58.039746"], ["assemblies_id", 6]]
+  ↳ db/seeds.rb:11
+  [1m[35m (91.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mAssembly Create (3.6ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at", "parts_id") VALUES (?, ?, ?, ?)[0m  [["name", "Péché Mortel"], ["created_at", "2018-10-25 17:46:58.150646"], ["updated_at", "2018-10-25 17:46:58.150646"], ["parts_id", 7]]
+  ↳ db/seeds.rb:10
+  [1m[35m (94.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPart Create (3.3ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at", "assemblies_id") VALUES (?, ?, ?, ?)[0m  [["part_number", "Lenny Reynolds II"], ["created_at", "2018-10-25 17:46:58.286354"], ["updated_at", "2018-10-25 17:46:58.286354"], ["assemblies_id", 7]]
+  ↳ db/seeds.rb:11
+  [1m[35m (507.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mAssembly Create (0.8ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at", "parts_id") VALUES (?, ?, ?, ?)[0m  [["name", "Alpha King Pale Ale"], ["created_at", "2018-10-25 17:46:58.823057"], ["updated_at", "2018-10-25 17:46:58.823057"], ["parts_id", 8]]
+  ↳ db/seeds.rb:10
+  [1m[35m (474.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPart Create (0.7ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at", "assemblies_id") VALUES (?, ?, ?, ?)[0m  [["part_number", "Royal Kovacek"], ["created_at", "2018-10-25 17:46:59.320293"], ["updated_at", "2018-10-25 17:46:59.320293"], ["assemblies_id", 8]]
+  ↳ db/seeds.rb:11
+  [1m[35m (246.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mAssembly Create (1.1ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at", "parts_id") VALUES (?, ?, ?, ?)[0m  [["name", "Trappistes Rochefort 10"], ["created_at", "2018-10-25 17:46:59.575512"], ["updated_at", "2018-10-25 17:46:59.575512"], ["parts_id", 9]]
+  ↳ db/seeds.rb:10
+  [1m[35m (391.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPart Create (0.9ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at", "assemblies_id") VALUES (?, ?, ?, ?)[0m  [["part_number", "Herman Cummerata"], ["created_at", "2018-10-25 17:46:59.978147"], ["updated_at", "2018-10-25 17:46:59.978147"], ["assemblies_id", 9]]
+  ↳ db/seeds.rb:11
+  [1m[35m (558.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mAssembly Create (1.0ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at", "parts_id") VALUES (?, ?, ?, ?)[0m  [["name", "Bell’s Expedition"], ["created_at", "2018-10-25 17:47:00.542285"], ["updated_at", "2018-10-25 17:47:00.542285"], ["parts_id", 10]]
+  ↳ db/seeds.rb:10
+  [1m[35m (335.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPart Create (0.7ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at", "assemblies_id") VALUES (?, ?, ?, ?)[0m  [["part_number", "Quincy Strosin"], ["created_at", "2018-10-25 17:47:00.924007"], ["updated_at", "2018-10-25 17:47:00.924007"], ["assemblies_id", 10]]
+  ↳ db/seeds.rb:11
+  [1m[35m (932.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAssembly Load (27.0ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" LIMIT ?[0m  [["LIMIT", 11]]

@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_150513) do
+ActiveRecord::Schema.define(version: 2018_10_25_174343) do
 
   create_table "assemblies", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "parts_id"
+    t.index ["parts_id"], name: "index_assemblies_on_parts_id"
   end
 
   create_table "assemblies_parts", id: false, force: :cascade do |t|
@@ -29,6 +31,8 @@ ActiveRecord::Schema.define(version: 2018_10_25_150513) do
     t.string "part_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "assemblies_id"
+    t.index ["assemblies_id"], name: "index_parts_on_assemblies_id"
   end
 
 end
